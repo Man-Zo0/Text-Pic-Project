@@ -1,0 +1,249 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+    
+    <style>
+        
+        @font-face {
+            font-family: 'UhBeemunseulye';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_five@.2.0/UhBeemunseulye.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'UhBeeLovelyAN';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_five@.2.0/UhBeeLovelyAN.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'RixYeoljeongdo_Regular';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2102-01@1.0/RixYeoljeongdo_Regular.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'YESMyoungjo-Bold';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_13@1.0/YESMyoungjo-Bold.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'UhBeeSeulvely';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_five@.2.0/UhBeeSeulvely.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'MaruBuri-Regular';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-10-21@1.0/MaruBuri-Regular.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
+        body {background-color: white;}
+        .canv {border: 1px solid black; margin-bottom: 1%; max-width: 100%;}
+        article {padding-top: 3.5%; max-width: 70%; margin-left: 15%; background-color: white;}
+
+        .input {display: flex; flex-direction: row; gap: 2%; margin-bottom: 2%;}
+        .input2 {display: flex; flex-direction: row; gap: 2%; margin-bottom: 2%;}  
+        hr {margin-top: 2%; margin-bottom: 2%;}      
+
+        .text, .text2 {background: #F3F0F0; border: 1px solid #000000; width:554px; height:37px;
+            box-sizing: border-box; box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);}
+
+        .text2 {visibility: hidden;}
+        
+        .show, .download {width: 77px; height: 37px; background: #ffffff; color: black;
+            border: 1px solid #000000; box-sizing: border-box; font-size: 10pt; text-align: center;
+            box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); text-decoration: none; 
+            border-radius: 10px;} 
+        .download {padding: 8px;}
+
+        .bar { font-size: 25pt; text-decoration: none;  font-family: YESMyoungjo-Bold;}
+        .ltgt {text-decoration: none;}
+
+        .related {
+        background-color: rgba(219, 221, 223, 0.3);
+        border: 1px solid rgb(170, 171, 172);
+        padding: 10px;
+        padding-bottom: 0px;
+        position: fixed;
+        top: 14.7%;
+        left: 70%;
+        width: 222px;
+        font-family: MaruBuri-Regular;
+        }
+        
+        .title {color: #f1f0f0; font-family: MaruBuri-Regular; font-size: 15pt;}
+
+        @media screen and (max-width: 90em) {
+            .related {
+                visibility: hidden;
+            }
+        }
+        @media screen and (max-width: 40em) {
+            article {
+                margin-left: 8%;
+                max-width: 85%;
+            }
+            .title {margin-left: 10px;}
+            .bar {visibility: hidden;}
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container-fluid">
+          <!-- Brand and toggle get grouped for better mobile display -->
+          <div class="navbar-header">
+            <h3 class="title">T e x t &nbsp; P i c</h3>
+          </div>
+        </div><!-- /.container-fluid -->
+    </nav>
+
+    <article>    
+        <p class="bar">{{info.id}}. </p>
+        <canvas class="canv" width="757" height="440" ></canvas>
+        <div class="input">
+            <input type="text" class="text">
+            <button class="show"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
+            <a href="" class="download" download="my_painting.png"><span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span></a>
+        </div>
+        <div class="input2">
+            <input type="text" class="text2">
+        </div>
+
+        <div class="related">
+            <p>1. 입력창에 원하는 문구 입력</p>
+            <p>2. <span class="glyphicon glyphicon-search" aria-hidden="true"></span>으로 결과물 확인</p>
+            <p>3. <span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span>으로 다운로드</p>
+            <div>
+            <p><span style="font-size: x-small;">Made By</span> Man-Zoo &nbsp; <a href="https://github.com/Man-Zo0" target="_blank">Github</a> <a href="https://gae-gi-da.tistory.com/" target="_blank">Blog</a></p>
+            
+            </div>
+        </div>
+        <hr>
+        <div class="row">
+            <div class="col-sm-3 col-xs-6">
+                <p>1. Picket</p>
+                <div class="thumbnail">
+                  <a href="{%url 'home' 1 %}"><img src="/static/picket.jpg" alt="..."></a>
+                </div>
+            </div>
+            <div class="col-sm-3 col-xs-6">
+                <p>2. Blackboard</p>
+                <div class="thumbnail">
+                  <a href="{%url 'home' 2 %}"><img src="/static/blackboard.jpg" alt="..."></a>
+                </div>
+            </div>
+            <div class="col-sm-3 col-xs-6">
+                <p>3. Sign</p>
+                <div class="thumbnail">
+                  <a href="{%url 'home' 3 %}"><img src="/static/sign.jpg" alt="..."></a>
+                </div>
+            </div>
+            <div class="col-sm-3 col-xs-6">
+                <p>4. Namecard</p>
+                <div class="thumbnail">
+                  <a href="{%url 'home' 4 %}"><img src="/static/nametag.jpg" alt="..."></a>
+                </div>
+            </div>
+            <div class="col-sm-3 col-xs-6">
+                <p>5. Box</p>
+                <div class="thumbnail">
+                  <a href="{%url 'home' 5 %}"><img src="/static/box.jpg" alt="..."></a>
+                </div>
+            </div>
+            
+        </div>
+           
+    </article>
+
+
+
+
+    <script>
+        
+        const canv = document.querySelector('.canv');
+        const cont = canv.getContext('2d');
+
+        document.querySelector('.download').addEventListener('click', event =>
+        event.target.href = canv.toDataURL()); 
+
+        const id = '{{info.id}}';
+        if (id == 3) {
+            document.querySelector('.text2').style.visibility = 'visible';
+        }
+
+        let img = new Image();
+        const imgurl = '{{info.img_url}}';
+        let txt = "/static/"+imgurl;
+        img.src = txt
+        cont.drawImage(img,0,0,757,440);
+
+        let posx = "{{ info.posx }}";
+        let posy = "{{ info.posy }}";
+        let start_size = "{{ info.start_size }}";
+        let max_width = "{{ info.max_width }}";
+        let font_family = "{{ info.font_family }}";
+        let rotate = "{{ info.rotate }}";
+        let alpha = "{{ info.alpha }}";
+        let color = "{{ info.color }}";
+
+        cont.textAlign = 'center';
+        cont.textBaseline = 'middle';
+        cont.fillStyle = color;
+
+        document.querySelector('.show').addEventListener('click', event => 
+            {
+                cont.clearRect(0,0,757,440);
+                cont.drawImage(img,0,0,757,440);
+
+                let fsize = start_size;
+                let text = document.querySelector('.text').value;
+                while (true) {
+                    cont.font = fsize + 'pt ' + font_family;
+
+                    if (cont.measureText(text).width < max_width) break
+                    else fsize -= 1;
+                }
+                
+                cont.globalAlpha = alpha;
+                cont.rotate(Math.PI/rotate);
+                cont.fillText(text,posx,posy); 
+                cont.globalAlpha = 1;
+                cont.rotate(-Math.PI/rotate);
+
+                if (id == 3) {
+                    fsize = start_size;
+                    let text2 = document.querySelector('.text2').value;
+                    while (true) {
+                        cont.font = fsize + 'pt ' + font_family;
+
+                        if (cont.measureText(text2).width < max_width) break
+                        else fsize -= 1;
+                    }
+                    
+                    cont.globalAlpha = alpha;
+                    cont.rotate(Math.PI/rotate);
+                    cont.fillText(text2,parseInt(posx)+32,parseInt(posy)+130); 
+                    cont.globalAlpha = 1;
+                    cont.rotate(-Math.PI/rotate);
+                }
+            }
+        );
+
+        
+        
+    </script> 
+
+</body>
+</html>
